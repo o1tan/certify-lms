@@ -56,6 +56,10 @@ use App\Policies\UserPolicy;
 use App\Policies\WeakDrillPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\QaThread;
+use App\Policies\QaThreadPolicy;
+use App\Models\QaReply;
+use App\Policies\QaReplyPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -76,6 +80,8 @@ class AuthServiceProvider extends ServiceProvider
         SectionImage::class => SectionImagePolicy::class,
         SectionQuestion::class => SectionQuestionPolicy::class,
         QuestionCategory::class => QuestionCategoryPolicy::class,
+        QaThread::class => QaThreadPolicy::class,
+        QaReply::class => QaReplyPolicy::class,
         MockExam::class => MockExamPolicy::class,
         MockExamQuestion::class => MockExamQuestionPolicy::class,
         MockExamSession::class => MockExamSessionPolicy::class,
